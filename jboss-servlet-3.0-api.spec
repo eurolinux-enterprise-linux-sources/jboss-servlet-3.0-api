@@ -3,7 +3,7 @@
 
 Name:             jboss-servlet-3.0-api
 Version:          1.0.1
-Release:          6%{dist}
+Release:          9%{?dist}
 Summary:          Java Servlet 3.0 API
 Group:            Development/Libraries
 License:          CDDL
@@ -22,7 +22,6 @@ BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    maven-enforcer-plugin
-BuildRequires:    maven-plugin-cobertura
 BuildRequires:    maven-dependency-plugin
 BuildRequires:    maven-ear-plugin
 
@@ -75,6 +74,15 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc LICENSE README
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.0.1-9
+- Mass rebuild 2013-12-27
+
+* Fri Dec 13 2013 Ade Lee <alee@redhat.com> 1.0.1-8
+- Fix spec file dist tag for rpmlint
+
+* Wed Nov 13 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.0.1-7
+- Remove unneeded BR: maven-plugin-cobertura
+
 * Thu May 9 2013 Ade Lee <alee@redhat.com> 1.0.1-6
 - Resolves #961462 - Remove unneeded maven-checkstyle-plugin and 
   maven-eclipse-plugin BR
